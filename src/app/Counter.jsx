@@ -1,11 +1,16 @@
 // Increment the count when the button is clicked
+import { useState } from "react";
 
 export const Counter = () => {
-  const count = 0;
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount((curr) => curr + 1);
+  };
 
   return (
     <>
-      <button>Clcked {count} times</button>
+      <button onClick={handleClick}>Clcked {count} times</button>
     </>
   );
 };
